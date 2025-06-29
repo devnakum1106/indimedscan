@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Dengue Fever",
+    "symptoms": ["fever", "headache", "joint pain", "rash"],
+    "causes": "Dengue virus spread by Aedes mosquito"
+  },
+  {
+    "name": "Tuberculosis",
+    "symptoms": ["cough", "weight loss", "fever", "night sweats"],
+    "causes": "Mycobacterium tuberculosis"
+  },
+  {
+    "name": "Malaria",
+    "symptoms": ["chills", "fever", "sweating", "nausea"],
+    "causes": "Plasmodium parasite transmitted by Anopheles mosquito"
+  }
+]
