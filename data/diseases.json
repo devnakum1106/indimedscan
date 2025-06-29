@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Dengue",
+    "symptoms": ["fever", "headache", "muscle pain", "rash", "joint pain"]
+  },
+  {
+    "name": "Malaria",
+    "symptoms": ["fever", "chills", "sweating", "nausea", "vomiting"]
+  },
+  {
+    "name": "Tuberculosis",
+    "symptoms": ["cough", "fever", "weight loss", "night sweats", "fatigue"]
+  },
+  {
+    "name": "Common Cold",
+    "symptoms": ["cough", "sneezing", "runny nose", "sore throat"]
+  },
+  {
+    "name": "Typhoid",
+    "symptoms": ["fever", "weakness", "stomach pain", "loss of appetite"]
+  },
+  {
+    "name": "COVID-19",
+    "symptoms": ["fever", "dry cough", "tiredness", "loss of taste", "shortness of breath"]
+  },
+  {
+    "name": "Asthma",
+    "symptoms": ["cough", "shortness of breath", "wheezing", "chest tightness"]
+  }
+]
