@@ -32,3 +32,11 @@ document.getElementById("searchInput").addEventListener("input", async (e) => {
   );
   displayResults(filtered);
 });
+document.getElementById("searchInput").addEventListener("input", async function(e) {
+  const query = e.target.value.toLowerCase();
+  const diseases = await fetchDiseases();
+  const filtered = diseases.filter(d =>
+    d.symptoms.some(symptom => symptom.toLowerCase().includes(query))
+  );
+  displayResults(filtered);
+});
