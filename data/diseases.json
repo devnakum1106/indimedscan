@@ -1,30 +1,27 @@
 [
   {
     "name": "Dengue",
-    "symptoms": ["fever", "headache", "muscle pain", "rash", "joint pain"]
-  },
-  {
-    "name": "Malaria",
-    "symptoms": ["fever", "chills", "sweating", "nausea", "vomiting"]
+    "symptoms": ["fever", "rash", "joint pain", "headache"],
+    "causes": "Dengue virus spread by mosquito bites"
   },
   {
     "name": "Tuberculosis",
-    "symptoms": ["cough", "fever", "weight loss", "night sweats", "fatigue"]
+    "symptoms": ["cough", "fever", "night sweats", "weight loss"],
+    "causes": "Mycobacterium tuberculosis bacteria"
   },
   {
-    "name": "Common Cold",
-    "symptoms": ["cough", "sneezing", "runny nose", "sore throat"]
+    "name": "Malaria",
+    "symptoms": ["fever", "chills", "sweating", "headache"],
+    "causes": "Plasmodium parasite transmitted by mosquitoes"
   },
   {
     "name": "Typhoid",
-    "symptoms": ["fever", "weakness", "stomach pain", "loss of appetite"]
+    "symptoms": ["fever", "abdominal pain", "weakness", "constipation"],
+    "causes": "Salmonella typhi bacteria"
   },
   {
     "name": "COVID-19",
-    "symptoms": ["fever", "dry cough", "tiredness", "loss of taste", "shortness of breath"]
-  },
-  {
-    "name": "Asthma",
-    "symptoms": ["cough", "shortness of breath", "wheezing", "chest tightness"]
+    "symptoms": ["fever", "cough", "fatigue", "loss of smell"],
+    "causes": "SARS-CoV-2 virus"
   }
 ]
