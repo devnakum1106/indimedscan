@@ -1,17 +1,15 @@
 body {
   font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
   margin: 0;
   padding: 0;
-  background: #f5f5f5;
-  color: #333;
+  text-align: center;
 }
 
 header {
-  background: #2a9d8f;
+  background-color: #004d40;
   color: white;
   padding: 20px;
-  text-align: center;
-  border-bottom: 3px solid #21867a;
 }
 
 main {
@@ -19,15 +17,22 @@ main {
 }
 
 input[type="text"] {
-  width: 100%;
+  width: 80%;
   padding: 10px;
   font-size: 16px;
   margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-#results {
-  background: white;
+.disease-card {
+  background-color: white;
+  border-radius: 10px;
   padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
