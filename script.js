@@ -9,12 +9,13 @@ function displayResults(filtered) {
   resultsDiv.innerHTML = "";
 
   if (filtered.length === 0) {
-    resultsDiv.innerHTML = "<p>No matching disease found.</p>";
+    resultsDiv.innerHTML = "<p>No matching diseases found.</p>";
     return;
   }
 
   filtered.forEach(disease => {
     const div = document.createElement("div");
+    div.classList.add("disease-card");
     div.innerHTML = `
       <h3>${disease.name}</h3>
       <p><strong>Symptoms:</strong> ${disease.symptoms.join(", ")}</p>
@@ -24,19 +25,15 @@ function displayResults(filtered) {
   });
 }
 
-document.getElementById("searchInput").addEventListener("input", async (e) => {
-  const query = e.target.value.toLowerCase();
+document.addEventListener("DOMContentLoaded", async () => {
   const diseases = await fetchDiseases();
-  const filtered = diseases.filter(d =>
-    d.symptoms.some(symptom => symptom.toLowerCase().includes(query))
-  );
-  displayResults(filtered);
-});
-document.getElementById("searchInput").addEventListener("input", async function(e) {
-  const query = e.target.value.toLowerCase();
-  const diseases = await fetchDiseases();
-  const filtered = diseases.filter(d =>
-    d.symptoms.some(symptom => symptom.toLowerCase().includes(query))
-  );
-  displayResults(filtered);
+  const input = document.getElementById("searchInput");
+
+  input.addEventListener("input", () => {
+    const query = input.value.toLowerCase();
+    const filtered = diseases.filter(d =>
+      d.symptoms.some(symptom => symptom.toLowerCase().includes(query))
+    );
+    displayResults(filtered);
+  });
 });
