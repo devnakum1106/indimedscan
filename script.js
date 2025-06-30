@@ -1,4 +1,3 @@
-// Predefined list of common symptoms for suggestion
 const allSymptoms = [
   "fever", "cough", "fatigue", "rash", "joint pain",
   "headache", "sore throat", "runny nose", "sneezing",
