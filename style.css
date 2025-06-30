@@ -1,3 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #007BFF;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  flex: 1;
+  padding: 1rem;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 #clearButton {
   margin-top: 0.25rem;
   padding: 0.5rem 1rem;
@@ -11,4 +48,63 @@
 
 #clearButton:hover {
   background-color: #c82333;
+}
+
+#suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+#suggestions li {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+#suggestions li:hover {
+  background-color: #f0f0f0;
+}
+
+#matchCount {
+  font-weight: bold;
+  margin: 1rem 0 0.5rem;
+  color: #333;
+}
+
+#results > div {
+  background-color: white;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+footer {
+  background-color: #eee;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  input[type="text"] {
+    font-size: 0.9rem;
+  }
+
+  #results > div h3 {
+    font-size: 1.1rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
 }
