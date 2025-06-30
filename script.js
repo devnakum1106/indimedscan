@@ -5,9 +5,16 @@ const allSymptoms = [
   "weakness", "constipation", "weight loss"
 ];
 
+function showLoading(show) {
+  const loadingDiv = document.getElementById("loading");
+  loadingDiv.style.display = show ? "block" : "none";
+}
+
 async function fetchDiseases() {
+  showLoading(true);
   const response = await fetch("data/diseases.json");
   const data = await response.json();
+  showLoading(false);
   return data;
 }
 
@@ -60,12 +67,13 @@ function showSuggestions(inputValue) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const diseases = await fetchDiseases();
   const searchInput = document.getElementById("searchInput");
   const clearButton = document.getElementById("clearButton");
   const suggestions = document.getElementById("suggestions");
   const results = document.getElementById("results");
   const countDiv = document.getElementById("matchCount");
+
+  const diseases = await fetchDiseases();
 
   searchInput.addEventListener("input", () => {
     const query = searchInput.value.toLowerCase()
