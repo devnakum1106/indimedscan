@@ -2,7 +2,8 @@ const allSymptoms = [
   "fever", "cough", "fatigue", "rash", "joint pain",
   "headache", "sore throat", "runny nose", "sneezing",
   "loss of smell", "night sweats", "abdominal pain",
-  "weakness", "constipation", "weight loss", "shortness of breath", "itchiness", "yellow skin", "vomiting", "diarrhea"
+  "weakness", "constipation", "weight loss", "shortness of breath",
+  "itchiness", "yellow skin", "vomiting", "diarrhea"
 ];
 
 function showLoading(show) {
@@ -69,8 +70,17 @@ function showSuggestions(inputValue) {
   });
 }
 
+function extractSymptomsFromText(text) {
+  const found = allSymptoms.filter(symptom =>
+    text.toLowerCase().includes(symptom)
+  );
+  return [...new Set(found)];
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   const searchInput = document.getElementById("searchInput");
+  const aiInput = document.getElementById("aiInput");
+  const aiParseButton = document.getElementById("aiParseButton");
   const clearButton = document.getElementById("clearButton");
   const suggestions = document.getElementById("suggestions");
   const results = document.getElementById("results");
@@ -95,8 +105,26 @@ document.addEventListener("DOMContentLoaded", async () => {
     showSuggestions(searchInput.value);
   });
 
+  aiParseButton.addEventListener("click", () => {
+    const inputText = aiInput.value.trim();
+    if (!inputText) return;
+
+    const extracted = extractSymptomsFromText(inputText);
+    searchInput.value = extracted.join(" ");
+    const filtered = diseases.filter(d =>
+      extracted.every(symptom =>
+        d.symptoms.some(s => s.toLowerCase().includes(symptom))
+      )
+    );
+
+    displayResults(filtered);
+    suggestions.innerHTML = "";
+    countDiv.scrollIntoView({ behavior: "smooth" });
+  });
+
   clearButton.addEventListener("click", () => {
     searchInput.value = "";
+    aiInput.value = "";
     suggestions.innerHTML = "";
     results.innerHTML = "";
     countDiv.textContent = "";
