@@ -2,7 +2,7 @@ const allSymptoms = [
   "fever", "cough", "fatigue", "rash", "joint pain",
   "headache", "sore throat", "runny nose", "sneezing",
   "loss of smell", "night sweats", "abdominal pain",
-  "weakness", "constipation", "weight loss"
+  "weakness", "constipation", "weight loss", "shortness of breath", "itchiness", "yellow skin", "vomiting", "diarrhea"
 ];
 
 function showLoading(show) {
@@ -47,18 +47,21 @@ function showSuggestions(inputValue) {
 
   if (!inputValue) return;
 
-  const lastTerm = inputValue.split(",").pop().trim().toLowerCase();
+  const parts = inputValue.trim().split(" ");
+  const lastWord = parts[parts.length - 1].toLowerCase();
+
+  if (!lastWord) return;
+
   const matched = allSymptoms.filter(sym =>
-    sym.toLowerCase().startsWith(lastTerm) && lastTerm !== ""
+    sym.toLowerCase().startsWith(lastWord)
   );
 
   matched.forEach(symptom => {
     const li = document.createElement("li");
     li.textContent = symptom;
     li.onclick = () => {
-      let current = searchInput.value.split(",");
-      current[current.length - 1] = " " + symptom;
-      searchInput.value = current.join(",").trim() + ", ";
+      parts[parts.length - 1] = symptom;
+      searchInput.value = parts.join(" ") + " ";
       suggestions.innerHTML = "";
       searchInput.focus();
     };
@@ -76,8 +79,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   const diseases = await fetchDiseases();
 
   searchInput.addEventListener("input", () => {
-    const query = searchInput.value.toLowerCase()
-      .split(",")
+    const query = searchInput.value
+      .toLowerCase()
+      .split(" ")
       .map(s => s.trim())
       .filter(Boolean);
 
