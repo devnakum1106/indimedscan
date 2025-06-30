@@ -13,11 +13,14 @@ async function fetchDiseases() {
 
 function displayResults(filtered) {
   const resultsDiv = document.getElementById("results");
+  const countDiv = document.getElementById("matchCount");
   resultsDiv.innerHTML = "";
 
   if (filtered.length === 0) {
-    resultsDiv.innerHTML = "<p>No matching diseases found.</p>";
+    countDiv.textContent = "No matching diseases found.";
     return;
+  } else {
+    countDiv.textContent = `${filtered.length} disease(s) matched.`;
   }
 
   filtered.forEach(disease => {
@@ -62,6 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const clearButton = document.getElementById("clearButton");
   const suggestions = document.getElementById("suggestions");
   const results = document.getElementById("results");
+  const countDiv = document.getElementById("matchCount");
 
   searchInput.addEventListener("input", () => {
     const query = searchInput.value.toLowerCase()
@@ -83,6 +87,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     searchInput.value = "";
     suggestions.innerHTML = "";
     results.innerHTML = "";
+    countDiv.textContent = "";
     searchInput.focus();
   });
 });
