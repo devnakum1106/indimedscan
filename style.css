@@ -111,7 +111,22 @@ input[type="text"] {
 
 /* ======= AI Parser ======= */
 .ai-parser {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
   margin-top: 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ai-parser h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
 }
 
 .ai-parser textarea {
@@ -120,20 +135,21 @@ input[type="text"] {
   font-size: 1rem;
   padding: 0.75rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
   resize: vertical;
   box-sizing: border-box;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
 #aiParseButton {
+  display: block;
   width: 100%;
   padding: 0.6rem 1rem;
   font-size: 1rem;
   background-color: #28a745;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
