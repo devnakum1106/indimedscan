@@ -17,14 +17,19 @@
       <input 
         type="text" 
         id="searchInput" 
-        placeholder="Enter symptoms separated by commas (e.g., fever, cough)" 
+        placeholder="Enter symptoms separated by spaces (e.g., fever cough fatigue)" 
         autocomplete="off"
       />
       <ul id="suggestions"></ul>
       <button id="clearButton">Clear All</button>
     </div>
 
-    <!-- 👇 Loader added here -->
+    <!-- 🔍 AI Symptom Parser -->
+    <div class="ai-parser">
+      <textarea id="aiInput" placeholder="Or describe how you feel (e.g., I have fever and joint pain)..."></textarea>
+      <button id="aiParseButton">Analyze & Search</button>
+    </div>
+
     <div id="loading">Loading data...</div>
 
     <div id="matchCount"></div>
