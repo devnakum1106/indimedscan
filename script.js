@@ -59,6 +59,9 @@ function showSuggestions(inputValue) {
 document.addEventListener("DOMContentLoaded", async () => {
   const diseases = await fetchDiseases();
   const searchInput = document.getElementById("searchInput");
+  const clearButton = document.getElementById("clearButton");
+  const suggestions = document.getElementById("suggestions");
+  const results = document.getElementById("results");
 
   searchInput.addEventListener("input", () => {
     const query = searchInput.value.toLowerCase()
@@ -74,5 +77,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     displayResults(filtered);
     showSuggestions(searchInput.value);
+  });
+
+  clearButton.addEventListener("click", () => {
+    searchInput.value = "";
+    suggestions.innerHTML = "";
+    results.innerHTML = "";
+    searchInput.focus();
   });
 });
