@@ -1,3 +1,11 @@
+// Predefined list of common symptoms for suggestion
+const allSymptoms = [
+  "fever", "cough", "fatigue", "rash", "joint pain",
+  "headache", "sore throat", "runny nose", "sneezing",
+  "loss of smell", "night sweats", "abdominal pain",
+  "weakness", "constipation", "weight loss"
+];
+
 async function fetchDiseases() {
   const response = await fetch("data/diseases.json");
   const data = await response.json();
@@ -24,12 +32,37 @@ function displayResults(filtered) {
   });
 }
 
+function showSuggestions(inputValue) {
+  const suggestions = document.getElementById("suggestions");
+  suggestions.innerHTML = "";
+
+  if (!inputValue) return;
+
+  const lastTerm = inputValue.split(",").pop().trim().toLowerCase();
+  const matched = allSymptoms.filter(sym =>
+    sym.toLowerCase().startsWith(lastTerm) && lastTerm !== ""
+  );
+
+  matched.forEach(symptom => {
+    const li = document.createElement("li");
+    li.textContent = symptom;
+    li.onclick = () => {
+      let current = searchInput.value.split(",");
+      current[current.length - 1] = " " + symptom;
+      searchInput.value = current.join(",").trim() + ", ";
+      suggestions.innerHTML = "";
+      searchInput.focus();
+    };
+    suggestions.appendChild(li);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   const diseases = await fetchDiseases();
-  const input = document.getElementById("searchInput");
+  const searchInput = document.getElementById("searchInput");
 
-  input.addEventListener("input", () => {
-    const query = input.value.toLowerCase()
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase()
       .split(",")
       .map(s => s.trim())
       .filter(Boolean);
@@ -41,5 +74,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     );
 
     displayResults(filtered);
+    showSuggestions(searchInput.value);
   });
 });
