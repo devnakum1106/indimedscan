@@ -1,5 +1,6 @@
+/* ======= Base Layout ======= */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
@@ -19,24 +20,29 @@ header {
 main {
   flex: 1;
   padding: 1rem;
+  max-width: 600px;
+  margin: auto;
 }
 
 .input-wrapper {
   position: relative;
+  margin-bottom: 1rem;
 }
 
+/* ======= Input Field ======= */
 input[type="text"] {
   width: 100%;
   padding: 0.75rem;
   font-size: 1rem;
-  margin-bottom: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
+/* ======= Clear Button ======= */
 #clearButton {
-  margin-top: 0.25rem;
+  display: block;
+  margin-top: 0.5rem;
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
   background-color: #dc3545;
@@ -44,16 +50,18 @@ input[type="text"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  width: 100%;
 }
 
 #clearButton:hover {
   background-color: #c82333;
 }
 
+/* ======= Suggestions ======= */
 #suggestions {
   list-style: none;
   padding: 0;
-  margin: 0 0 1rem 0;
+  margin: 0;
   position: absolute;
   width: 100%;
   background-color: #fff;
@@ -73,12 +81,15 @@ input[type="text"] {
   background-color: #f0f0f0;
 }
 
+/* ======= Match Count ======= */
 #matchCount {
   font-weight: bold;
-  margin: 1rem 0 0.5rem;
+  margin: 0.5rem 0;
   color: #333;
+  text-align: center;
 }
 
+/* ======= Results ======= */
 #results > div {
   background-color: white;
   margin-bottom: 1rem;
@@ -88,6 +99,7 @@ input[type="text"] {
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
+/* ======= Footer ======= */
 footer {
   background-color: #eee;
   text-align: center;
@@ -95,13 +107,23 @@ footer {
   font-size: 0.9rem;
 }
 
-@media (max-width: 600px) {
+/* ======= Mobile Responsive ======= */
+@media (max-width: 500px) {
+  body {
+    font-size: 0.95rem;
+  }
+
   input[type="text"] {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  #clearButton {
+    font-size: 0.95rem;
+    padding: 0.6rem;
   }
 
   #results > div h3 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   footer {
