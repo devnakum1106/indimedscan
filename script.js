@@ -1,4 +1,3 @@
-// script.js
 window.addEventListener('load', () => {
   const splash = document.getElementById('splash-screen');
   const main = document.getElementById('main-content');
@@ -30,7 +29,9 @@ function analyzeSymptoms() {
   let results = [];
 
   diseaseData.forEach(disease => {
-    const matchCount = disease.symptoms.filter(symptom => input.includes(symptom.toLowerCase())).length;
+    const matchCount = disease.symptoms.filter(symptom =>
+      input.includes(symptom.toLowerCase())
+    ).length;
     if (matchCount > 0) {
       results.push({ name: disease.name, matches: matchCount });
     }
@@ -38,7 +39,7 @@ function analyzeSymptoms() {
 
   results.sort((a, b) => b.matches - a.matches);
   resultContainer.innerText = results.length
-    ? results.map(r => `✅ ${r.name} (Matches: ${r.matches})`).join("\n")
+    ? results.map(r => `✅ ${r.name} (Matches: ${r.matches})`).join("\\n")
     : "❌ No matching diseases found.";
 }
 
