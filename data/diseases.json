@@ -1,77 +1,26 @@
 [
   {
     "name": "Common Cold",
-    "symptoms": ["cough", "sneezing", "runny nose", "sore throat"],
-    "causes": ["virus", "airborne droplets", "touching infected surfaces"]
-  },
-  {
-    "name": "Influenza (Flu)",
-    "symptoms": ["fever", "chills", "cough", "fatigue"],
-    "causes": ["influenza virus", "close contact"]
-  },
-  {
-    "name": "Typhoid Fever",
-    "symptoms": ["fever", "abdominal pain", "weakness", "constipation"],
-    "causes": ["Salmonella typhi", "contaminated food and water"]
-  },
-  {
-    "name": "Dengue",
-    "symptoms": ["fever", "rash", "joint pain", "headache"],
-    "causes": ["dengue virus", "mosquito bite"]
+    "symptoms": ["sneezing", "cough", "runny nose", "sore throat", "fever"]
   },
   {
     "name": "Malaria",
-    "symptoms": ["fever", "chills", "night sweats", "fatigue"],
-    "causes": ["Plasmodium parasite", "mosquito bite"]
+    "symptoms": ["fever", "chills", "headache", "sweating", "nausea"]
+  },
+  {
+    "name": "Dengue",
+    "symptoms": ["fever", "headache", "muscle pain", "rash", "joint pain"]
+  },
+  {
+    "name": "Typhoid",
+    "symptoms": ["fever", "weakness", "abdominal pain", "constipation", "loss of appetite"]
   },
   {
     "name": "COVID-19",
-    "symptoms": ["fever", "cough", "fatigue", "loss of smell"],
-    "causes": ["SARS-CoV-2", "airborne droplets"]
+    "symptoms": ["fever", "dry cough", "fatigue", "loss of taste", "shortness of breath"]
   },
   {
-    "name": "Tuberculosis",
-    "symptoms": ["cough", "weight loss", "fever", "night sweats"],
-    "causes": ["Mycobacterium tuberculosis", "airborne transmission"]
-  },
-  {
-    "name": "Jaundice",
-    "symptoms": ["fatigue", "abdominal pain", "yellow skin"],
-    "causes": ["liver infection", "hepatitis", "alcohol"]
-  },
-  {
-    "name": "Chikungunya",
-    "symptoms": ["fever", "rash", "joint pain", "headache"],
-    "causes": ["chikungunya virus", "mosquito bite"]
-  },
-  {
-    "name": "Food Poisoning",
-    "symptoms": ["abdominal pain", "vomiting", "diarrhea", "fever"],
-    "causes": ["bacteria", "contaminated food", "toxins"]
-  },
-  {
-    "name": "Asthma",
-    "symptoms": ["cough", "shortness of breath", "wheezing"],
-    "causes": ["allergens", "dust", "pollution"]
-  },
-  {
-    "name": "Anemia",
-    "symptoms": ["fatigue", "weakness", "headache", "shortness of breath"],
-    "causes": ["iron deficiency", "blood loss", "chronic diseases"]
-  },
-  {
-    "name": "Pneumonia",
-    "symptoms": ["fever", "cough", "fatigue", "shortness of breath"],
-    "causes": ["bacteria", "virus", "fungi"]
-  },
-  {
-    "name": "Measles",
-    "symptoms": ["fever", "rash", "runny nose", "cough"],
-    "causes": ["measles virus", "airborne droplets"]
-  },
-  {
-    "name": "Chickenpox",
-    "symptoms": ["rash", "fever", "fatigue", "itchiness"],
-    "causes": ["varicella-zoster virus", "direct contact"]
+    "name": "Influenza",
+    "symptoms": ["fever", "chills", "muscle aches", "cough", "fatigue"]
   }
 ]
