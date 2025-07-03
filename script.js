@@ -1,4 +1,3 @@
-
 window.addEventListener('load', () => {
   const splash = document.getElementById('splash-screen');
   const main = document.getElementById('main-content');
@@ -16,7 +15,6 @@ function loadDiseaseData() {
     .then(response => response.json())
     .then(data => {
       diseaseData = data;
-      console.log("✅ Disease data loaded:", diseaseData);
     })
     .catch(error => {
       console.error("❌ Failed to load disease.json:", error);
@@ -40,7 +38,7 @@ function analyzeSymptoms() {
 
   results.sort((a, b) => b.matches - a.matches);
   resultContainer.innerText = results.length
-    ? results.map(r => `✅ ${r.name} (Matches: ${r.matches})`).join("\n")
+    ? results.map(r => `✅ ${r.name} (Matches: ${r.matches})`).join("\\n")
     : "❌ No matching diseases found.";
 }
 
