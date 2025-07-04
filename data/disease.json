@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Common Cold",
+    "symptoms": [
+      "sneezing",
+      "cough",
+      "runny nose",
+      "sore throat",
+      "fever"
+    ],
+    "description": "A mild viral infection of the nose and throat. Symptoms usually resolve in a few days without treatment."
+  },
+  {
+    "name": "Malaria",
+    "symptoms": [
+      "fever",
+      "chills",
+      "headache",
+      "sweating",
+      "nausea"
+    ],
+    "description": "A mosquito-borne disease caused by a parasite. Symptoms include cyclical fever, chills, and flu-like illness."
+  },
+  {
+    "name": "Dengue",
+    "symptoms": [
+      "fever",
+      "headache",
+      "muscle pain",
+      "rash",
+      "joint pain"
+    ],
+    "description": "A viral infection spread by mosquitoes. Known for high fever, severe headache, and joint/muscle pain (breakbone fever)."
+  },
+  {
+    "name": "Typhoid",
+    "symptoms": [
+      "fever",
+      "weakness",
+      "abdominal pain",
+      "constipation",
+      "loss of appetite"
+    ],
+    "description": "A bacterial infection from contaminated food or water. Symptoms include prolonged fever and digestive issues."
+  },
+  {
+    "name": "COVID-19",
+    "symptoms": [
+      "fever",
+      "dry cough",
+      "fatigue",
+      "loss of taste",
+      "shortness of breath"
+    ],
+    "description": "An infectious disease caused by the SARS-CoV-2 virus. Symptoms vary from mild respiratory illness to severe complications."
+  },
+  {
+    "name": "Influenza",
+    "symptoms": [
+      "fever",
+      "chills",
+      "muscle aches",
+      "cough",
+      "fatigue"
+    ],
+    "description": "A contagious respiratory illness caused by influenza viruses. Common during seasonal outbreaks, it causes fever and fatigue."
+  }
+]
